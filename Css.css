@@ -15,16 +15,16 @@ body{
 
 
 #header{
-	background-color:#ADDFFF;/*makes background light blue*/
+	background-color:#000000;/*makes background light blue*/
 	margin-left:auto;
 	margin-right: auto;
 	padding:auto;
-	padding-left: 30px;
-	padding-top: 65px;;
-	height: 275px;
-	max-height: 275px;
-	border-top-right-radius: 25px;
-	border-top-left-radius:25px;}
+	padding-left: 10%;
+	padding-top: 20%;;
+	height: 10%;
+	max-height: 10%;
+	border-top-right-radius: 9%;
+	border-top-left-radius:9%;}
 
 
 
@@ -50,6 +50,7 @@ h1{
 	color:#50A6C2;
 	margin-top: 0px;
 	padding-top: 2%;
+	text-align:center;
 }
 
 h2{

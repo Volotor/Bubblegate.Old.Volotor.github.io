@@ -9,7 +9,13 @@
 	<title>Task 1 - Flikr Loader</title>
 
 
-
+	$(document).ready(function(){
+	    $("button").click(function(){
+	        $.get("demo_test.asp", function(data, status){
+	            alert("Data: " + data + "\nStatus: " + status);
+	        });
+	    });
+	});
 
 
 </head>
@@ -26,6 +32,7 @@
 			<h1>Flikr Loader</h1>
 		</div>
 		<div id="parchment">
+			<button>Send an HTTP GET request to a page and get the result back</button>
 		</div>
 
 	</div>
