@@ -21,10 +21,10 @@
 		//ajax implementation
 
 		function search_p() {
-			alert(search);
+			//alert(search);
 			var search = document.getElementById("search-bar").value;
 
-			var searchURL = "https://api.flickr.com/services/feeds/photos_public.gne?tagmode=all&=" + search + "&safe_search=1&per_page=9&format=json&jsoncallback=?";
+			var searchURL = "https://crossorigin.me/https://api.flickr.com/services/feeds/photos_public.gne?tagmode=all&=" + search + "&safe_search=1&per_page=9&format=json&jsoncallback=?";
 			var getJSON = function(url) {
 				return new Promise(function(resolve, reject) {
 					var xhr = new XMLHttpRequest();
@@ -43,7 +43,7 @@
 			};
 
 			getJSON(searchURL).then(function(data) {
-					alert('Your Json result is:  ' + data.result);
+					alert('Your Json result is:  ' + data);
 				})
 			}
 			//	alert(getJSON);
