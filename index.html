@@ -12,23 +12,25 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
-	//ajax implementation
+
 
 
 			function search_p() {
-				//alert(search);
+				//wipe old images keep the image area from loading more than 9 images
 				$("#images").empty();
 				var search;
 				var searchURL;
 				if (document.getElementById("search-bar").value) {
+						//cors-anywhere to allow client side access
 					search = document.getElementById("search-bar").value;
 					searchURL = "https://cors-anywhere.herokuapp.com/https://api.flickr.com/services/feeds/photos_public.gne?tagmode=all&tags=" + search + "&format=json&jsoncallback=?";
 				} else {
+					//if there is not search then show default images
 					search = "";
 					searchURL = "https://cors-anywhere.herokuapp.com/https://api.flickr.com/services/feeds/photos_public.gne?tagmode=all&format=json&jsoncallback=?";
 				}
 
-				//cors-anywhere to allow client side access
+
 
 				var getJSON = function(url) {
 					return new Promise(function(resolve, reject) {
@@ -55,15 +57,12 @@
 
 						console.log(dataJSON);
 						console.log(dataJSON.items[0].media.m);
-					/*	$.each(dataJSON.items, function(i, item) {
-							src = item.media.m;
-							$("<img/>").attr("src", src).appendTo("#images");
-							*/
-
+							//i<9 to ensure a max of 9 images loaded
 							for (var i = 0; i < 9;  i++){
 									src = dataJSON.items[i].media.m;
 									title = dataJSON.items[i].title
 									$("<img/>").attr({src: src}).appendTo("#images");
+									//3 imaes to a line
 									if (((i+1) % 3) === 0) {
 										$("<br>").appendTo("#images");
 									}
@@ -88,8 +87,10 @@
 
 
 
+			<!-- Where all the images will load to-->
 			<div id="content">
-				<input type="search" id="search-bar" placeholder="Search" onkeyup="search_p()"></input>
+
+				<input type="search" id="search-bar" placeholder="Begin typing to search!" onkeyup="search_p()"></input>
 
 
 
