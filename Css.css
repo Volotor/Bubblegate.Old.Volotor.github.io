@@ -1,0 +1,187 @@
+body{
+	background-color:#F8F8FF; /*changes the background colour to Ghost White*/
+}
+
+#container{
+	margin-left:auto;
+	margin-right: auto;
+	margin-top:0px;
+	width: 72.5%;
+	box-shadow: 10px 10px 10px 7.5px #888888;/*adds a shadow effect to the container*/
+	max-width: 72.5%;
+	min-width: 900px;
+	border-radius: 25px;/*Adds a rounded edge to the corners*/
+}
+
+
+#header{
+	background-color:#ADDFFF;/*makes background light blue*/
+	margin-left:auto;
+	margin-right: auto;
+	padding:auto;
+	padding-left: 30px;
+	padding-top: 65px;;
+	height: 275px;
+	max-height: 275px;
+	border-top-right-radius: 25px;
+	border-top-left-radius:25px;}
+
+
+
+#parchment{ /*Text Area*/
+	background-color: #FEFEFA;
+	margin-left:auto;
+	margin-right: auto;
+	margin-top:0px;
+	height: auto;
+	min-height: 300px;
+	border-bottom-right-radius: 25px;
+	border-bottom-left-radius:25px;
+	padding-left: 2%;
+	padding-bottom: 5%;
+	padding-right:2%;
+}
+
+
+
+h1{
+	font-family: arial;
+	font-size: 50px;
+	color:#50A6C2;
+	margin-top: 0px;
+	padding-top: 2%;
+}
+
+h2{
+	font-family: arial;
+	font-size: 25px;
+	color:#50A6C2;
+	padding-left: 5px;
+}
+
+h3{
+	font-family: arial;
+	font-size: 18px;
+	color:#50A6C2;
+	padding-left: 5px;
+}
+
+
+p{
+	font-family: arial;
+	font-size: 18px;
+	color:#000000;
+	padding-left: 5px;
+}
+
+
+p::first-letter {/*psuedo CSS to make the first letter blue*/
+    font-size: 100%;
+    color: #50A6C2;
+}
+
+ul.navbar{
+	margin-top: 0px;
+	list-style-type: none;
+	padding-top: 7px;
+}
+
+li{/*makes the list go across the page*/
+	display:inline;
+	color:#FFF;
+	padding-top: 0px;
+	margin-top: 0px;
+}
+
+
+a:link{
+	color:#FF7F00;
+}
+
+a:visited{
+	color:#FFAF00;
+}
+
+a:hover{/*as opposed to changing colours a box also appres
+around the link*/
+	color:#FF7F00;
+
+
+}
+
+a:active{
+	background-color:#F8F8FF;
+}
+
+
+a.navbar{
+	margin-top: 0px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-family: arial;
+	font-size: 25px;
+	text-align: center;
+	vertical-align: center;
+	padding-left: 10%;
+	padding-right: 10%;
+
+
+}
+
+a.navbar:link{
+	color:#FFFFFF;
+	text-decoration: none;
+}
+
+a.navbar:visited{
+	color:#FFFFFF;
+	text-decoration: none;
+}
+
+a.navbar:hover{
+	background-color:#FFFFFF;
+	text-decoration: none;
+	color: #FF7F00;
+
+}
+
+a.navbar:active{
+	background-color:#FFFFFF;
+	text-decoration: none;
+	color: #FFAF00;
+}
+
+table{
+	border-collapse: collapse;
+	border:2px solid #50A6C2;
+	font-family: arial;
+	font-size: 18px;
+	color: #000000;
+	min-width: 80%;
+	float:center;
+	margin: auto;
+	padding-top: 5px;
+	}
+
+th{
+	border:2px solid #50A6C2;
+	background-color: #50C6C2;
+	color:#FEFEFA;
+	padding:5px;
+	font-size: 19px;
+
+}
+
+td{
+	border:2px solid #50A6C2;
+	padding:5px;
+}
+
+tr.alt{/*makes the table row orange colour when used*/
+	background-color: #FFD500;
+
+	}
+
+tfoot{
+	background-color: #FFD500;
+}
