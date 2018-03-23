@@ -9,71 +9,75 @@
 	<title>Task 1 - Flikr Loader</title>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+	//ajax implementation
 
 
+			function search_p() {
+				//alert(search);
+				$("#images").empty();
+				var search;
+				var searchURL;
+				if (document.getElementById("search-bar").value) {
+					search = document.getElementById("search-bar").value;
+					searchURL = "https://cors-anywhere.herokuapp.com/https://api.flickr.com/services/feeds/photos_public.gne?tagmode=all&tags=" + search + "&format=json&jsoncallback=?";
+				} else {
+					search = "";
+					searchURL = "https://cors-anywhere.herokuapp.com/https://api.flickr.com/services/feeds/photos_public.gne?tagmode=all&format=json&jsoncallback=?";
+				}
 
+				//cors-anywhere to allow client side access
+
+				var getJSON = function(url) {
+					return new Promise(function(resolve, reject) {
+						var xhr = new XMLHttpRequest();
+						xhr.open('get', url, true);
+						xhr.onload = function() {
+							var status = xhr.status;
+
+							if (status == 200) {
+								resolve(xhr.response);
+							} else {
+								reject(status);
+							}
+						};
+						xhr.send();
+					});
+				};
+
+				getJSON(searchURL).then(function(data) {
+
+						var src;
+						var title;
+						var dataJSON = JSON.parse(data.slice(1, -1));
+
+						console.log(dataJSON);
+						console.log(dataJSON.items[0].media.m);
+					/*	$.each(dataJSON.items, function(i, item) {
+							src = item.media.m;
+							$("<img/>").attr("src", src).appendTo("#images");
+							*/
+
+							for (var i = 0; i < 9;  i++){
+									src = dataJSON.items[i].media.m;
+									title = dataJSON.items[i].title
+									$("<img/>").attr({src: src}).appendTo("#images");
+									if (((i+1) % 3) === 0) {
+										$("<br>").appendTo("#images");
+									}
+							}
+						});
+					}
+
+</script>
 
 </head>
 
-<body>
-
-	<script>
-		//ajax implementation
-
-		function search_p() {
-			//alert(search);
-			var search = document.getElementById("search-bar").value;
-
-			var searchURL = "https://crossorigin.me/https://api.flickr.com/services/feeds/photos_public.gne?tagmode=all&=" + search + "&safe_search=1&per_page=9&format=json&jsoncallback=?";
-			var getJSON = function(url) {
-				return new Promise(function(resolve, reject) {
-					var xhr = new XMLHttpRequest();
-					xhr.open('get', url, true);
-					xhr.responseType = 'json';
-					xhr.onload = function() {
-						var status = xhr.status;
-						if (status == 200) {
-							resolve(xhr.response);
-						} else {
-							reject(status);
-						}
-					};
-					xhr.send();
-				});
-			};
-
-			getJSON(searchURL).then(function(data) {
-					alert('Your Json result is:  ' + data);
-				})
-			}
-			//	alert(getJSON);
-
-			//alert(url);
-			/*
-						var src;
-
-						$.getJSON(url + "&format=json&jsoncallback=?", function(data) {
-							alert('Your Json result is:  ' + data.result)
-							$.each(data.items, function(i, item) {
-								//	src = "http://farm" + item.farm + ".static.flickr.com/" + item.server + "/" + item.id + "_" + item.secret + "_m.jpg";
-								src = media.m
-
-								$("<img/>").attr("src", src).appendTo("#images");
-								//	if (i == 3) return false;
-							});
-						});
-						*/
+<body onload="search_p()">
 
 
-
-
-
-
-
-
-
-			//$.getJSON('http://api.flickr.com/services/rest/?&amp;method=flickr.photosets.getPhotos&amp;api_key=' + apiKey + '&amp;photoset_id=72157619415192530&amp;format=json&amp;jsoncallback=?',
-	</script>
 
 	<div id="container">
 		<!--Container div contains the header,breakbar and parchment divs to ensure formating is inline-->
@@ -84,13 +88,14 @@
 
 
 
-			<div id="browse-container">
+			<div id="content">
 				<input type="search" id="search-bar" placeholder="Search" onkeyup="search_p()"></input>
 
+
+
+
+			<div id="images" >
 			</div>
-
-
-			<div id="images">
 			</div>
 		</div>
 

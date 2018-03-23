@@ -15,12 +15,12 @@ body{
 
 
 #header{
-	background-color:#000000;/*makes background light blue*/
+	background-color:#4b3832;
 	margin-left:auto;
 	margin-right: auto;
 	padding:auto;
 	padding-left: 10%;
-	padding-top: 20%;;
+	padding-top: 10%;
 	height: 5%;
 	max-height: 5%;
 	border-top-right-radius: 25px;
@@ -32,7 +32,7 @@ body{
 	background-color: #FEFEFA;
 	margin-left:auto;
 	margin-right: auto;
-	margin-top:0px;
+	margin-top:10px;
 	height: auto;
 	min-height: 300px;
 	border-bottom-right-radius: 25px;
@@ -40,149 +40,51 @@ body{
 	padding-left: 2%;
 	padding-bottom: 5%;
 	padding-right:2%;
+
+}
+
+#images{
+	text-align: justify;
+	display:inline-table;
+	justify-content:space-between;
+
+	width: 100%;
+
+}
+
+#search-bar{
+	width: 75%;
+	height: 25px;
+	border-radius: 25px;
+	color: ffffc4;
 }
 
 
+#content{
+	margin-left: 20%
+}
+
+input[type=text]{
+	background-color: #fff4e6;
+}
 
 h1{
 	font-family: arial;
-	font-size: 50px;
-	color:#50A6C2;
+	font-size: 60px;
+	color:#FFF;
 	margin-top: 0px;
 	padding-top: 2%;
 	text-align:center;
 }
 
-h2{
-	font-family: arial;
-	font-size: 25px;
-	color:#50A6C2;
-	padding-left: 5px;
+img{
+	border-radius: 8px;
+	width: 250px;
+	height: 200px;
+	align-self: justify;
+	margin: 5px;
 }
 
-h3{
-	font-family: arial;
-	font-size: 18px;
-	color:#50A6C2;
-	padding-left: 5px;
-}
-
-
-p{
-	font-family: arial;
-	font-size: 18px;
-	color:#000000;
-	padding-left: 5px;
-}
-
-
-p::first-letter {/*psuedo CSS to make the first letter blue*/
-    font-size: 100%;
-    color: #50A6C2;
-}
-
-ul.navbar{
-	margin-top: 0px;
-	list-style-type: none;
-	padding-top: 7px;
-}
-
-li{/*makes the list go across the page*/
-	display:inline;
-	color:#FFF;
-	padding-top: 0px;
-	margin-top: 0px;
-}
-
-
-a:link{
-	color:#FF7F00;
-}
-
-a:visited{
-	color:#FFAF00;
-}
-
-a:hover{/*as opposed to changing colours a box also appres
-around the link*/
-	color:#FF7F00;
-
-
-}
-
-a:active{
-	background-color:#F8F8FF;
-}
-
-
-a.navbar{
-	margin-top: 0px;
-	color: #FFFFFF;
-	text-decoration: none;
-	font-family: arial;
-	font-size: 25px;
-	text-align: center;
-	vertical-align: center;
-	padding-left: 10%;
-	padding-right: 10%;
-
-
-}
-
-a.navbar:link{
-	color:#FFFFFF;
-	text-decoration: none;
-}
-
-a.navbar:visited{
-	color:#FFFFFF;
-	text-decoration: none;
-}
-
-a.navbar:hover{
-	background-color:#FFFFFF;
-	text-decoration: none;
-	color: #FF7F00;
-
-}
-
-a.navbar:active{
-	background-color:#FFFFFF;
-	text-decoration: none;
-	color: #FFAF00;
-}
-
-table{
-	border-collapse: collapse;
-	border:2px solid #50A6C2;
-	font-family: arial;
-	font-size: 18px;
-	color: #000000;
-	min-width: 80%;
-	float:center;
-	margin: auto;
-	padding-top: 5px;
-	}
-
-th{
-	border:2px solid #50A6C2;
-	background-color: #50C6C2;
-	color:#FEFEFA;
-	padding:5px;
-	font-size: 19px;
-
-}
-
-td{
-	border:2px solid #50A6C2;
-	padding:5px;
-}
-
-tr.alt{/*makes the table row orange colour when used*/
-	background-color: #FFD500;
-
-	}
-
-tfoot{
-	background-color: #FFD500;
+img:hover {
+		box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
