@@ -12,6 +12,7 @@
 
 
 
+
 </head>
 
 <body>
@@ -19,13 +20,59 @@
 	<script>
 		//ajax implementation
 
-		$(document).ready(function(){
-				$("button").click(function(){
-						$.get("demo_test.asp", function(data, status){
-								alert("Data: " + data + "\nStatus: " + status);
-						});
+		function search_p() {
+			alert(search);
+			var search = document.getElementById("search-bar").value;
+
+			var searchURL = "https://api.flickr.com/services/feeds/photos_public.gne?tagmode=all&=" + search + "&safe_search=1&per_page=9&format=json&jsoncallback=?";
+			var getJSON = function(url) {
+				return new Promise(function(resolve, reject) {
+					var xhr = new XMLHttpRequest();
+					xhr.open('get', url, true);
+					xhr.responseType = 'json';
+					xhr.onload = function() {
+						var status = xhr.status;
+						if (status == 200) {
+							resolve(xhr.response);
+						} else {
+							reject(status);
+						}
+					};
+					xhr.send();
 				});
-		});
+			};
+
+			getJSON(searchURL).then(function(data) {
+					alert('Your Json result is:  ' + data.result);
+				})
+			}
+			//	alert(getJSON);
+
+			//alert(url);
+			/*
+						var src;
+
+						$.getJSON(url + "&format=json&jsoncallback=?", function(data) {
+							alert('Your Json result is:  ' + data.result)
+							$.each(data.items, function(i, item) {
+								//	src = "http://farm" + item.farm + ".static.flickr.com/" + item.server + "/" + item.id + "_" + item.secret + "_m.jpg";
+								src = media.m
+
+								$("<img/>").attr("src", src).appendTo("#images");
+								//	if (i == 3) return false;
+							});
+						});
+						*/
+
+
+
+
+
+
+
+
+
+			//$.getJSON('http://api.flickr.com/services/rest/?&amp;method=flickr.photosets.getPhotos&amp;api_key=' + apiKey + '&amp;photoset_id=72157619415192530&amp;format=json&amp;jsoncallback=?',
 	</script>
 
 	<div id="container">
@@ -34,7 +81,17 @@
 			<h1>Flikr Loader</h1>
 		</div>
 		<div id="parchment">
-			<button>Send an HTTP GET request to a page and get the result back</button>
+
+
+
+			<div id="browse-container">
+				<input type="search" id="search-bar" placeholder="Search" onkeyup="search_p()"></input>
+
+			</div>
+
+
+			<div id="images">
+			</div>
 		</div>
 
 	</div>

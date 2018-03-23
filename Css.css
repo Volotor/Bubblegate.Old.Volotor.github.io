@@ -9,7 +9,7 @@ body{
 	width: 72.5%;
 	box-shadow: 10px 10px 10px 7.5px #888888;/*adds a shadow effect to the container*/
 	max-width: 72.5%;
-	min-width: 900px;
+	min-width: 72.5%;
 	border-radius: 25px;/*Adds a rounded edge to the corners*/
 }
 
@@ -21,10 +21,10 @@ body{
 	padding:auto;
 	padding-left: 10%;
 	padding-top: 20%;;
-	height: 10%;
-	max-height: 10%;
-	border-top-right-radius: 9%;
-	border-top-left-radius:9%;}
+	height: 5%;
+	max-height: 5%;
+	border-top-right-radius: 25px;
+	border-top-left-radius:25px;}
 
 
 
